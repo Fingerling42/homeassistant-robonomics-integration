@@ -7,7 +7,7 @@ Integration gives you the remote access to your local smart home through encrypt
 * Manage Home Assistant users with subscription devices
 * Create backups
 
-More information you can find on [Robonomics Wiki](https://wiki.robonomics.network/docs/en/home-assistant-begin/).
+More information you can find on [Robonomics Wiki](https://wiki.robonomics.network/docs/robonomics-smart-home-overview/).
 
 ## Requirements
 
