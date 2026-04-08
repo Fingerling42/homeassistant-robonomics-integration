@@ -719,7 +719,7 @@ class Robonomics:
         except Exception as e:
             _LOGGER.debug(f"subscribe exception {e}")
 
-            time.sleep(4)
+            await asyncio.sleep(4)
             await self.hass.data[DOMAIN][ROBONOMICS].subscribe()
 
     async def resubscribe(self) -> None:
