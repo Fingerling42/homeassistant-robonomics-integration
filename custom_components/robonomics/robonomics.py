@@ -605,14 +605,18 @@ class Robonomics:
         _LOGGER.debug("Start looking for DApp ipfs hash")
         datalog = Datalog(Account())
         last_datalog_item = datalog.get_index(DAPP_HASH_DATALOG_ADDRESS)["end"]
+
+        if last_datalog_item <= 0:
+            _LOGGER.debug("DApp datalog is empty")
+            return None
+
         last_datalog = datalog.get_item(
             DAPP_HASH_DATALOG_ADDRESS, last_datalog_item - 1
         )
         if last_datalog is not None:
             ipfs_hash = last_datalog[1]
             return ipfs_hash
-        else:
-            return None
+        return None
 
     @to_thread
     def find_password(self, address: str) -> tp.Optional[str]:
